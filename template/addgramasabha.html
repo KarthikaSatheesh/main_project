@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>GRAMASABHA</title>
+    <style>
+table,th,td
+{
+border: 1px solid black;
+}
+table.center
+{
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+    <style type="text/css">
+	label{
+		color: red;
+	}
+	</style>
+      <script src="{% static 'jquery.min.js' %}"></script>
+	<script src="{% static 'jquery.validate.min.js' %}"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#form1").validate({
+				rules:{
+					place:{
+						required:true
+					},
+					time:{
+					    required:true
+					},
+					date:{
+					    required:true
+					},
+					wardno:{
+						required:true
+					},
+
+                }
+
+			});
+		});
+	</script>
+</head>
+<body><div style="text-align:center">
+<a href="adminhome"><b>HOME</b></a><br><br>
+<a href="viewgramasabha"><h4><b><u> VIEW GRAMASABHA DETAILS</u></b></h4></a><br>
+</div>
+<div style="text-align:center">
+<div class="container p-3 my-3 bg-dark text-white">
+<h5>ADD GRAMASABHA</h5>
+</div>
+<div class="container-sm border"><br>
+<div class="container">
+<form id="form1" action="grama" method="post">
+    <div style="text-align:center">
+    {% csrf_token %}
+    <div class="form-group">
+      <div style="text-align:left">
+          <div class="place"><b>PLACE:</b></div>
+      <input type="text" id="place" name="place" class="form-control"  placeholder="Enter place">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="time"><b>TIME:</b></div>
+      <input type="time" id="time" name="time" class="form-control"  placeholder="Select  time">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="date"><b>DATE:</b></div>
+      <input type="date" id="date" name="date" class="form-control"  placeholder="Choose date">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="wardno"><b>WARD NUMBER:</b></div>
+      <input type="number" id="wardno" name="wardno" class="form-control"  placeholder="Enter ward number">
+      </div></div>
+
+    <button type="submit" class="btn btn-danger">ADD</button>
+
+    <button type="submit" class="btn btn-success">RESET</button><br><br>
+
+    </div></form>
+</div></div>
+</div></body>
+</html>

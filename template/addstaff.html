@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>STAFF REGISTRATION</title>
+<style>
+table,th,td
+{
+border: 1px solid black;
+}
+table.center
+{
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+    <style type="text/css">
+	label{
+		color: red;
+	}
+	</style>
+      <script src="{% static 'jquery.min.js' %}"></script>
+	<script src="{% static 'jquery.validate.min.js' %}"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#form1").validate({
+				rules:{
+					name:{
+						minlength:3
+					},
+					age:{
+					    required:true
+					},
+					designation:{
+					    required:true
+					},
+					email:{
+						email:true
+					},
+					wardno:{
+						required:true,
+					},
+					address:{
+						required:true,
+					},
+					place:{
+						required:true,
+					},
+					educationalqualification:{
+						required:true,
+					},
+					photo:{
+						required:true,
+					},
+                    phone:{
+                       number:true,
+                       minlength:10
+                }
+
+				},
+			});
+		});
+	</script>
+</head>
+
+<body>
+<div style="text-align:center">
+    <a href="adminhome"><b>HOME</b></a><br><br>
+<a href="viewstaff"><h4><b><u> VIEW STAFF DETAILS</u></b></h4></a><br>
+</div>
+<div style="text-align:center">
+<div class="container p-3 my-3 bg-dark text-white">
+<h1>STAFF REGISTRATION</h1><br>
+</div>
+<form id="form1" action="staffd" method="post" enctype="multipart/form-data">
+<div style="text-align:center">
+{% csrf_token %}
+<div class="container-sm border"><br>
+<div class="container">
+<div class="col" style="background-color:white;">
+<div class="form-group">
+      <div style="text-align:left">
+          <div class="name"><b>NAME:</b></div>
+      <input type="text" id="name" name="name" class="form-control"  placeholder="Enter name">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+       <div class="designation"><b>DESIGNATION:</b></div>
+      <input type="text" id="designation" name="designation" class="form-control"  placeholder="Enter designation">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+       <div class="wardno"><b>WARD NUMBER:</b></div>
+      <input type="number" id="wardno" name="wardno" class="form-control"  placeholder="Enter ward number">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+       <div class="wardname"><b>WARD NAME:</b></div>
+      <input type="text" id="wardname" name="wardname" class="form-control"  placeholder="Enter ward name">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+       <div class="address"><b>ADDRESS:</b></div>
+      <input type="text" id="address" name="address" class="form-control"  placeholder="Enter address">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="phone"><b>CONTACT NUMBER:</b></div>
+      <input type="tel" id="phone" name="phone" class="form-control"  placeholder="Enter phone number">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+       <div class="age"><b>AGE:</b></div>
+      <input type="number" id="age" name="age" class="form-control"  placeholder="Enter age">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+       <div class="educationalqualification"><b>EDUCATIONAL QUALIFICATION:</b></div>
+      <input type="text" id="educationalqualification" name="educationalqualification" class="form-control"  placeholder="Enter educationalqualification">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+     <div class="email"><b>E-MAIL:</b></div>
+      <input type="email" id="email" name="email" class="form-control"  placeholder="Enter email">
+      </div></div>
+        <div class="form-group">
+      <div style="text-align:left">
+      <div class="photo"><b>PHOTOGRAPH:</b></div>
+      <input type="file" id="photo" name="file" class="form-control"  placeholder="upload your image">
+      </div></div><br>
+    <button type="submit" class="btn btn-success">REGISTER</button>
+     <button type="reset" class="btn btn-danger">RESET</button><br><br>
+
+</div></div>
+</div></div></form>
+</div></div>
+</body>
+</html>

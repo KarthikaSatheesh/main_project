@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>REPORT</title>
+</head>
+<style>
+    h2
+    {
+    color:red;
+    }
+</style>
+<body>
+<div style="text-align:center">
+<a href="adminhome"><b>HOME</b></a>
+</div>
+
+<div style="text-align:center">
+    <img src="{% static 'logo1.png' %}" class="img-rounded"  width="400" height="150">
+     <div class="container-sm border"><br>
+<div class="container">
+   <h2><b>ചക്കുപള്ളം ഗ്രാമപഞ്ചായത്ത് (Chakkupallam Grama Panchayat)</b></h2>
+    <h4> <b>Local Government Institution, Idukki District, Kerala</b></h4><br></h3></div>
+     </div></div>
+</div>
+<div class="container p-3 my-3 bg-dark text-white">
+<div style="text-align:center" >
+<h1>REPORTS</h1>
+</div><br>
+<form action="" method="post">
+    {% csrf_token %}
+<br>
+    <div style="text-align:center">
+    <a href="userwiseappli" ><button type="button" class="btn btn-warning">USER WISE REPORT</button></a><br><br>
+    <a href="schemewiseappli" ><button type="button" class="btn btn-primary">SCHEME WISE REPORT</button></a><br><br>
+    <a href="approvedappli"> <button type="button" class="btn btn-danger">APPROVED APPLICATIONS</button></a><br><br>
+    <a href="rejectedappli" ><button type="button" class="btn btn-success">REJECTED AAPLICATIONS</button></a><br><br>
+    </div>
+</form>
+</div></body>
+</html>

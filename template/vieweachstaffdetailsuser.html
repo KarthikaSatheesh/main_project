@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>VIEW STAFF DETAILS</title>
+    <style>
+        h5{
+    display: inline;
+}
+table,th,td
+{
+border: 1px solid black;
+}
+table.center
+{
+margin-left: auto;
+margin-right: auto;
+}
+    </style>
+</head>
+<body>
+<div style="text-align:center">
+<a href="uhome"><b>HOME</b></a><br>
+</div><br>
+<form action="edit" method="post" >
+    {% csrf_token %}
+<div class="container-sm border"><br>
+<div class="container">
+<div class="col" style="background-color:white;">
+<div style="text-align:center">
+<a href="gramapanchayat"><h6><b><u>GRAMA PANCHAYAT</u></b></h6></a>
+<a href="chakkupallamgp"><h6><b><u>CHAKKUPALLAM GRAMA PANCHAYAT</u></b></h6></a><br>
+    <div class="container p-3 my-3 bg-dark text-white">
+    <h3><b>Personal Details of Chakkupallam Grama Panchayat (Idukki) Member</b></h3>
+    </div>
+<table class="table table-white table-striped"border="3">
+    <tr>{% for i in data1 %}
+     <img src="{{i.photo.url}}"></tr>
+
+<tr><br><br>
+    <th>NAME</th>
+    <td>{{i.name}}</td>
+</tr>
+<tr>
+    <th>DESIGNATION</th>
+    <td>{{i.designation}}</td>
+</tr>
+<tr>
+    <th>WARD NO</th>
+    <td>{{i.wardno}}</td>
+</tr>
+    <tr>
+    <th>WARD NAME</th>
+    <td>{{i.wardname}}</td>
+</tr>
+<tr>
+    <th>ADDRESS</th>
+    <td>{{i.address}}</td>
+</tr>
+<tr>
+    <th>CONTACT NO</th>
+    <td>{{i.phone}}</td>
+</tr>
+    <tr>
+    <th>AGE</th>
+    <td>{{i.age}}</td>
+</tr>
+    <tr>
+    <th>EDUCATIONAL QUALIFICATION</th>
+    <td>{{i.educationalqualification}}</td>
+</tr>
+<tr>
+    <th>E-MAIL</th>
+    <td>{{i.email}}</td>
+</tr>
+
+
+    {% endfor %}
+</table></div></div></div></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>MY PROFILE</title>
+</head>
+<body>
+<div style="text-align:center">
+<a href="uhome"><b>HOME</b></a><br>
+</div><br>
+<div class="container-sm border"><br>
+<div class="container">
+<div class="container p-3 my-3 bg-dark text-white">
+<div style="text-align:center">
+    {% csrf_token %}
+    <h2>MY PROFILE</h2>
+</div>
+</div>
+<div style="text-align:center">
+<table class="table table-hover">
+<form action="myprofile" method="post">
+    {% csrf_token %}
+    <tr>
+     <img src="{{i.photo.url}}" width="170" height="200"><br><br></tr>
+<tr>
+    <th> NAME</th>
+    <td>{{i.name}}</td>
+</tr>
+<tr>
+    <th>ADDRESS</th>
+    <td>{{i.address}}</td>
+</tr>
+<tr>
+    <th>EMAIL</th>
+    <td>{{i.email}}</td>
+</tr>
+    <tr>
+    <th>PHONE</th>
+    <td>{{i.phone}}</td>
+</tr>
+<tr>
+    <th>CASTE</th>
+    <td>{{i.caste}}</td>
+</tr>
+<tr>
+    <th>religion</th>
+    <td>{{i.religion}}</td>
+</tr>
+    <tr>
+    <th>sex</th>
+    <td>{{i.sex}}</td>
+</tr>
+<tr>
+    <th>WARD NO</th>
+    <td>{{i.wardno}}</td>
+</tr>
+    <tr>
+    <th>PLACE</th>
+    <td>{{i.place}}</td>
+</tr>
+ <tr>
+    <th>USERNAME</th>
+    <td>{{i.username}}</td>
+</tr>
+
+
+</form>
+</table>
+</div>
+</div></div>
+</body>
+</html>

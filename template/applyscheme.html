@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>APPLY SCHEMES</title>
+</head>
+<body>
+<div style="text-align:center">
+<a href="uhome"><b>HOME</b></a><br>
+</div><br>
+<div class="container-sm border"><br>
+<div class="container">
+<div class="container p-3 my-3 bg-dark text-white">
+    <div style="text-align:center">
+    <h1>APPLICATION</h1>
+    </div></div>
+    <form action="applyschemea" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+<input type="hidden" value="{{data.id}}" name="id">
+    <div class="form-group">
+      <div style="text-align:left">
+      <label for="schemeid"><b>SCHEME ID:</b></label>
+      <input type="number" id="schemeid" name="id" value="{{s}}" class="form-control"  >
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <label for="userid"><b>USERNAME:</b></label>
+      <input type="text" id="userid" name="userid" value="{{u}}" class="form-control" >
+      </div></div>
+       <div class="form-group">
+      <div style="text-align:left">
+      <label for="photo"><b>PHOTO:</b></label>
+      <input type="file" id="photo" name="file"   class="form-control">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <label for="residencep"><b>PROOF OF IDENTITY FOR RESIDENCE:</b></label>
+      <input type="file" id="residencep" name="residencep"  class="form-control"  >
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <label for="idcardp"><b>VOTER ID/PAN CARD/DRIVING LISCENCE/PASSPORT:</b></label>
+      <input type="file" id="idcardp" name="idcardp"  class="form-control"  >
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <label for="taxp"><b>BUILDING TAX PROOF:</b></label>
+      <input type="file" id="taxp" name="taxp"  class="form-control" >
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <label for="incomep"><b>INCOME PROOF:</b></label>
+      <input type="file" id="incomep" name="incomep"  class="form-control"  >
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <label for="castep"><b>CASTE PROOF:</b></label>
+      <input type="file" id="castep" name="castep"  class="form-control">
+      </div></div>
+        <div style="text-align:center">
+            <button type="submit" name="applyschemea"  style="margin-left: 16px" class="btn btn-success" >APPLY</button><br><br><br><br><br><br>
+</div></form>
+</div></div></body>
+</html>

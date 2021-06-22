@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>show scheme wise report</title>
+    <script>
+        function p()
+        {
+        print()
+        }
+    </script>
+
+</head>
+<body>
+<div style="text-align:center">
+<a href="adminhome"><b>HOME</b></a><br>
+<a href="report"><b>REPORT</b></a>
+</div><br>
+ <div style="text-align:center">
+     <button type="submit" class="btn btn-success" onclick="p()">PRINT</button>
+ </div>
+<div class="container-sm border"><br>
+<div class="container">
+<div class="container p-3 my-3 bg-dark text-white">
+<div style="text-align:center">
+    <h3>SCHEME WISE REPORT</h3><BR>
+    <h1>APPLIED USERS</h1>
+</div></div>
+
+<table  class="table table-white table-striped" border="2">
+
+    <tr>
+        {% for i in data %}
+        <form action="" method="post">
+            {% csrf_token %}
+                <td>{{i.schemeid.scheme}}</td>
+
+         <td>{{i.userid}}</td>
+
+        </form></tr>
+    {% endfor %}
+
+</table>
+
+</div></div>
+</body>
+</html>

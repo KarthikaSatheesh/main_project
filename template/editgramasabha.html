@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>UPDATE GRAMASABHA DETAILS</title>
+</head>
+<style type="text/css">
+	label{
+		color: red;
+	}
+	</style>
+      <script src="{% static 'jquery.min.js' %}"></script>
+	<script src="{% static 'jquery.validate.min.js' %}"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#form1").validate({
+				rules:{
+					place:{
+						required:true
+					},
+					time:{
+					    required:true
+					},
+					date:{
+					    required:true
+					},
+					wardno:{
+						required:true
+					},
+
+                }
+
+			});
+		});
+	</script>
+<body>
+<div style="text-align:center">
+<a href="adminhome"><b>HOME</b></a>
+</div><br><br>
+<form id="form1" action="updategramasabha" method="post">
+{% csrf_token %}
+    <div class="container-sm border"><br>
+<div class="container">
+<div class="container p-3 my-3 bg-dark text-white">
+    <div style="text-align:center">
+    <h1> UPDATE GRAMASABHA DETAILS</h1>
+    </div></div>
+<input type="hidden" value="{{data.id}}" name="id">
+        <div class="form-group">
+      <div style="text-align:left">
+     <div class="place"><b>PLACE:</b></div>
+      <input type="text" id="place" name="place" value="{{data.place}}" class="form-control"  placeholder="Enter place">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+       <div class="time"><b>TIME:</b></div>
+      <input type="time" id="time" name="time" value="{{data.time}}" class="form-control"  placeholder="Select  time">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+     <div class="date"><b>DATE:</b></div>
+      <input type="date" id="date" name="date" value="{{data.date}}" class="form-control"  placeholder="Choose date">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+     <div class="wardno"><b>WARD NUMBER:</b></div>
+      <input type="number" id="wardno" name="wardno" value="{{data.wardno}}" class="form-control"  placeholder="Enter ward number">
+      </div></div>
+<div style="text-align:center">
+    <button type="submit" class="btn btn-info">UPDATE</button>
+</div>
+    </div>
+    </div></form>
+</body>
+</html>

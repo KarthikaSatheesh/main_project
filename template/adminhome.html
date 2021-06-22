@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Admin Home</title>
+</head>
+<style>
+    h6
+    {
+    color:blue;
+    }
+</style>
+<body>
+<div style="text-align:center">
+<a href="logout"><b>LOGOUT</b></a><br>
+</div><br>
+<div style="text-align:center">
+<form action="" method="post">
+<div class="container p-3 my-3 bg-dark text-white">
+    {% csrf_token %}
+<br>
+    <a href="viewuser" ><button type="button" class="btn btn-primary">VIEW USER</button></a>&nbsp&nbsp&nbsp
+    <a href="addstaff" ><button type="button" class="btn btn-success">STAFF</button></a>&nbsp&nbsp&nbsp
+    <a href="addgramasabha"> <button type="button" class="btn btn-info">GRAMASABHA</button></a>&nbsp&nbsp&nbsp
+    <a href="addscheme" ><button type="button" class="btn btn-warning">SCHEMES</button></a>&nbsp&nbsp&nbsp
+    <a href="addapplication" ><button type="button" class="btn btn-danger">APPLICATIONS</button></a>&nbsp&nbsp&nbsp
+    <a href="report" ><button type="button" class="btn btn-info">REPORTS</button></a><br>
+</div>
+</form>
+<br><div style="text-align:center">
+
+   <b>ADMIN HOME PAGE</b><br><br>
+        <marquee><h6><u><b>കോവിഡ് 19-വസ്തുനികുതി പിഴകൂടാതെ അടയ്ക്കുന്നതിനുള്ള അവസാനതീയതി 31/08/2021 </b></u></h6>
+    </marquee>
+    <div class="container p-3 my-3 bg-dark text-white">
+<h2>ചക്കുപള്ളം ഗ്രാമപഞ്ചായത്ത് (Chakkupallam Grama Panchayat)</h2>
+        <h4> Local Government Institution, Idukki District, Kerala</h4><br></h3></div>
+    <div class="container-sm border"><br>
+<div class="container">
+<div class="col" style="background-color:white;"><br>
+  <img src="{% static 'chakkupallamgp.jpg' %}" class="img-rounded"  width="600" height="400"><br><br>
+   <h4><u>About Chakkupallam</u></h4><br>
+    <div class="col-sm-16">
+    <h6><p class="text-justify">According to Census 2011 information the location code or village code of Chakkupallam village is 628082.
+        Chakkupallam village is located in Udumbanchola Tehsil of Idukki district in Kerala, India.
+        It is situated 34km away from sub-district headquarter Nedumkandam and 55km away from district headquarter Painavu.
+        As per 2009 stats, Chakkupallam village is also a gram panchayat.
+        The total geographical area of village is 2833 hectares. Chakkupallam has a total population of 12,609 peoples.
+        There are about 3,429 houses in Chakkupallam village. As per 2019 stats, Chakkupallam villages comes under Peerumade assembly & Idukki parliamentary constituency.
+        Thodupuzha is nearest town to Chakkupallam which is approximately 103km away.
+        Chakkupallam is a Gram (village) Panchayat in Idukki district in the Indian state of Kerala.
+        The administrative capital(Panchayat Office) and village center of Chakkupallam Gram(Village) Panchayat is Anakkara,
+        located on Kumily-Munnar state highway. The town has a large church, built in 2000.
+    </p></h6></div>
+<div style="text-align:center">
+<img src="{% static '4 Kusumam Satheesh.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Kusumam Satheesh</h6>
+<h6>PRESIDENT</h6>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-4">
+<img src="{% static '1 Bindhu Jayakumar.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Bindhu Jayakumar</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '2 Mariammal Madaswami.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Mariammal Madaswami</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '3 Asha Sukumar.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Asha Sukumar</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '5 Leelamma Varghese.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Leelamma Varghese</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '6 Ancy Biju.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Ancy Bijur</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '7 Devasiya Joseph.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Devasiya Joseph</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '8 Tincy Shiju.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Tincy Shiju/h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '9 Thulasy Pradeep.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Thulasy Pradeep</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '10 Valsamma.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Valsamma</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '11 Rajappan.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>V K Rajappan</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '12 Antony Scaria.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Antony Scaria</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '13 Lovely Easow.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Lovely Easow</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '14 Vijayamma Krishnankutty.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Vijayamma Krishnankutty</h6>
+<h6>Member</h6>
+</div>
+<div class="col-sm-4">
+<img src="{% static '15 Surendran Madhavan.jpg' %}" class="img-rounded" alt="Cinque Terre" width="170" height="200">
+<h6>Surendran Madhavan</h6>
+<h6>Member</h6>
+</div>
+</div>
+</div><br>
+</div></div></div>
+</body>
+</html>

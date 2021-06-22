@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>ADD SCHEME</title>
+        <style>
+table,th,td
+{
+border: 1px solid black;
+}
+table.center
+{
+margin-left: auto;
+margin-right: auto;
+}
+    </style>
+    <style type="text/css">
+	label{
+		color: red;
+	}
+	</style>
+      <script src="{% static 'jquery.min.js' %}"></script>
+	<script src="{% static 'jquery.validate.min.js' %}"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#form1").validate({
+				rules:{
+					scheme:{
+						required:true
+					},
+					requirements:{
+					    required:true
+					},
+
+                }
+
+			});
+		});
+	</script>
+</head>
+<body>
+<div style="text-align:center">
+<a href="adminhome"><b>HOME</b></a><br>
+   <br>
+<a href="viewscheme"><h4><b><u> VIEW SCHEME DETAILS</u></b></h4></a><br>
+</div>
+<div style="text-align:center">
+<div class="container p-3 my-3 bg-dark text-white">
+<h5>ADD SCHEME</h5>
+</div>
+<div class="container-sm border"><br>
+<div class="container">
+<form id="form1" action="scheme" method="post">
+    <div style="text-align:center">
+    {% csrf_token %}
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="scheme"><b>SCHEME:</b></div>
+      <input type="text" id="scheme" name="scheme" class="form-control"  placeholder="Enter scheme">
+      </div></div>
+    <div class="form-group">
+        <div style="text-align:left">
+   <div class="requirements"><b>REQUIREMENTS:</b></div>
+  <textarea class="form-control" rows="5" id="requirements"  name="requirements" placeholder="Enter requirements"></textarea>
+        </div></div>
+                           <button type="submit" class="btn btn-danger">ADD</button>
+
+    <button type="submit" class="btn btn-success">RESET</button><br><br><br><br><br>
+        </div>
+
+
+</form></div></div></div>
+</body>
+</html>

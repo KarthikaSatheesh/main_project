@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>EDIT STAFF</title>
+    <style type="text/css">
+	label{
+		color: red;
+	}
+	</style>
+      <script src="{% static 'jquery.min.js' %}"></script>
+	<script src="{% static 'jquery.validate.min.js' %}"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#form1").validate({
+				rules:{
+					name:{
+						required:true,
+						minlength:3
+					},
+					age:{
+					    required:true
+					},
+					designation:{
+					    required:true
+					},
+					email:{
+						required:true,
+						email:true
+					},
+					wardno:{
+						required:true,
+					},
+					address:{
+						required:true,
+					},
+					wardname:{
+						required:true,
+					},
+					educationalqualification:{
+						required:true,
+					},
+					photo:{
+						required:true,
+					},
+                    phone:{required:true,
+                       number:true,
+                       minlength:10
+                }
+
+				},
+			});
+		});
+	</script>
+</head>
+<body>
+<div style="text-align:center">
+<a href="adminhome">ADMIN HOME</a>
+</div>
+<form id="form1" action="update" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="container-sm border"><br>
+<div class="container">
+<div class="container p-3 my-3 bg-dark text-white">
+    <div style="text-align:center">
+    <h1>EDIT STAFF DETAILS</h1>
+    </div></div></div>
+<input type="hidden" value="{{data.id}}" name="id">
+             <div class="form-group">
+      <div style="text-align:left">
+          <div class="name"><b>NAME:</b></div>
+      <input type="text" id="name" name="name" value="{{data.name}}" class="form-control"  placeholder="Enter name">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="designation"><b>DESIGNATION:</b></div>
+      <input type="text" id="designation" name="designation" value="{{data.designation}}" class="form-control"  placeholder="Enter Designation">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="wardno"><b>WARD NUMBER:</b></div>
+      <input type="number" id="wardno" name="wardno" value="{{data.wardno}}" class="form-control"  placeholder="Enter Ward Number">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+     <div class="wardname"><b>WARD NAME:</b></div>
+      <input type="text" id="wardname" name="wardname" value="{{data.wardname}}" class="form-control"  placeholder="Enter ward Name">
+      </div></div>
+<div class="form-group">
+      <div style="text-align:left">
+      <div class="address"><b>ADDRESS:</b></div>
+      <input type="text" id="address" name="address" value="{{data.address}}" class="form-control"  placeholder="Enter address">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+     <div class="phone"><b>CONTACT NUMBER:</b></div>
+      <input type="tel" id="phone" name="phone" value="{{data.phone}}" class="form-control"  placeholder="Enter Phone Number">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+      <div class="age"><b>AGE:</b></div>
+      <input type="number" id="age" name="age" value="{{data.age}}" class="form-control"  placeholder="Enter age">
+      </div></div>
+    <div class="form-group">
+      <div style="text-align:left">
+     <div class="educationalqualification"><b>EDUCATIONAL QUALIFICATION:</b></div>
+      <input type="educationalqualification" id="educationalqualification" name="educationalqualification" value="{{data.educationalqualification}}" class="form-control"  placeholder="Enter educationalqualification">
+      </div></div>
+            <div class="form-group">
+      <div style="text-align:left">
+      <div class="email"><b>E-MAIL:</b></div>
+      <input type="email" id="email" name="email" value="{{data.age}}" class="form-control"  placeholder="Enter e-mail">
+      </div></div>
+            <div class="form-group">
+      <div style="text-align:left">
+      <div class="photo"><b>PHOTOGRAPH:</b></div>
+      <input type="file" id="photo" name="file"  class="form-control"  placeholder="Enter age">
+      </div></div>
+            <div style="text-align:center">
+                                           <input type="submit" name="addstaff" value="UPDATE" style="margin-left: 16px" >
+            </div>
+    </div>
+</form>
+</body>
+</html>
